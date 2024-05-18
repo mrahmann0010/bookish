@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Bookish/static/css/main.277a620e.css",
+    "main.js": "/Bookish/static/js/main.d3a778bc.js",
+    "static/media/read-showbook-bg.jpg": "/Bookish/static/media/read-showbook-bg.fb04300e5c17a5e5d3b7.jpg",
+    "static/media/HoneybeePersonalUseRegular-YzBn4.ttf": "/Bookish/static/media/HoneybeePersonalUseRegular-YzBn4.3819a21d543adc42b52c.ttf",
+    "static/media/AhganiryaPersonalUse-Yznaj.ttf": "/Bookish/static/media/AhganiryaPersonalUse-Yznaj.aa0ef8d78315100777d3.ttf",
+    "static/media/book-icon.png": "/Bookish/static/media/book-icon.1f9650abd36f9d59751b.png",
+    "index.html": "/Bookish/index.html",
+    "main.277a620e.css.map": "/Bookish/static/css/main.277a620e.css.map",
+    "main.d3a778bc.js.map": "/Bookish/static/js/main.d3a778bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.277a620e.css",
+    "static/js/main.d3a778bc.js"
+  ]
+}
