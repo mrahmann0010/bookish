@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <>
-        <BrowserRouter>
+        <BrowserRouter basename='/bookish'>
             <header>
                 <nav className='nav-bar'>
                 <NavLink to='/'>
