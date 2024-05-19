@@ -43,10 +43,10 @@ export default function App() {
 
   return (
     <>
-        <BrowserRouter basename='/bookish'>
+        <BrowserRouter>
             <header>
                 <nav className='nav-bar'>
-                <NavLink exact path='/bookish'>
+                <NavLink to='/'>
                     <span className='navI'><IoLibraryOutline /></span>
                     <span className='navT'>Search</span>
                     
