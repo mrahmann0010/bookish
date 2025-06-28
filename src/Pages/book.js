@@ -95,7 +95,6 @@ export default function IndBook({sldBook, books, bookCopy, selectedId, readLater
         
     } 
     
-
     useEffect(function(){
         if(!auth.currentUser) {
             localStorage.setItem('readLater', JSON.stringify(readLater));
@@ -103,14 +102,11 @@ export default function IndBook({sldBook, books, bookCopy, selectedId, readLater
         
     },[readLater]);
  
-
     return(
     <div className='book-con-main'>
 
         {isLoading && <Loading />}
-        {!isLoading && 
-
-             
+        {!isLoading &&     
              
              <div className='ind-book'>
                 <div className='ind-book-img'>
@@ -118,8 +114,6 @@ export default function IndBook({sldBook, books, bookCopy, selectedId, readLater
                 </div>
 
                 <div className='ind-book-des'>
-
-
 
                     <h4>{bookData.title}</h4>
                     <h5>{books[selectedId].author_name?
@@ -135,8 +129,12 @@ export default function IndBook({sldBook, books, bookCopy, selectedId, readLater
                     
                     <div className='add-des'>
                         <div className='add-des-box'>
-                            <span>Rating</span>
-                            <span className='rating'> <FaStar />{books[selectedId].ratings_average.toFixed(1)}</span>
+                            <span>Ratings</span>
+                            <span className='rating'> 
+                                <FaStar />
+                            {books[selectedId].ratings_average!== undefined? 
+                            books[selectedId].ratings_average.toFixed(0): 'N/A'}
+                            </span>
                             
                         </div>
 
@@ -153,7 +151,8 @@ export default function IndBook({sldBook, books, bookCopy, selectedId, readLater
                         <button className='ind-btn added' disabled>Already Added</button>
                             ) : (
                         <button onClick={() => handleClick(bookData)} className='ind-btn'>Add to Reading List</button>
-)}            
+                        )
+                    }            
                 
                 </div>
 
@@ -175,4 +174,7 @@ function Loading() {
 
         </div>
     )
-}
+};
+
+// Previusly --
+{/* <span className='rating'> <FaStar />{books[selectedId].ratings_average.toFixed(0)}</span> */}

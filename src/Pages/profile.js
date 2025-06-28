@@ -71,7 +71,6 @@ export default function Later({user, setUser}) {
 
   const postCol = collection(db, 'Books')
 
-
   useEffect(() => {
     const getPost = async () => {
       try {
@@ -147,7 +146,6 @@ export default function Later({user, setUser}) {
 
 
 function LandingPage({handleSignOut, handleText, name, setName}) {
-
 
   return(
     <div className='landing'>

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bookish/static/css/main.01749e39.css",
-    "main.js": "/bookish/static/js/main.836fc80b.js",
-    "static/media/read-showbook-bg.jpg": "/bookish/static/media/read-showbook-bg.fb04300e5c17a5e5d3b7.jpg",
-    "static/media/HoneybeePersonalUseRegular-YzBn4.ttf": "/bookish/static/media/HoneybeePersonalUseRegular-YzBn4.3819a21d543adc42b52c.ttf",
-    "static/media/AhganiryaPersonalUse-Yznaj.ttf": "/bookish/static/media/AhganiryaPersonalUse-Yznaj.aa0ef8d78315100777d3.ttf",
-    "static/media/book-icon.png": "/bookish/static/media/book-icon.1f9650abd36f9d59751b.png",
-    "index.html": "/bookish/index.html",
-    "main.01749e39.css.map": "/bookish/static/css/main.01749e39.css.map",
-    "main.836fc80b.js.map": "/bookish/static/js/main.836fc80b.js.map"
+    "main.css": "/static/css/main.e0431d09.css",
+    "main.js": "/static/js/main.4f993074.js",
+    "static/media/read-showbook-bg.jpg": "/static/media/read-showbook-bg.fb04300e5c17a5e5d3b7.jpg",
+    "static/media/HoneybeePersonalUseRegular-YzBn4.ttf": "/static/media/HoneybeePersonalUseRegular-YzBn4.3819a21d543adc42b52c.ttf",
+    "static/media/AhganiryaPersonalUse-Yznaj.ttf": "/static/media/AhganiryaPersonalUse-Yznaj.aa0ef8d78315100777d3.ttf",
+    "static/media/book-icon.png": "/static/media/book-icon.1f9650abd36f9d59751b.png",
+    "index.html": "/index.html",
+    "main.e0431d09.css.map": "/static/css/main.e0431d09.css.map",
+    "main.4f993074.js.map": "/static/js/main.4f993074.js.map"
   },
   "entrypoints": [
-    "static/css/main.01749e39.css",
-    "static/js/main.836fc80b.js"
+    "static/css/main.e0431d09.css",
+    "static/js/main.4f993074.js"
   ]
 }

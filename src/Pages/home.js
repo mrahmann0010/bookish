@@ -4,10 +4,8 @@ import { IoIosSearch } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 
 
-
 export default function Home({query, books, setQuery, setBooks, 
     selectedId, setSelectedId, sldBook, setSldBook}) {
-
 
     return (
         <div className='home'>
@@ -18,8 +16,7 @@ export default function Home({query, books, setQuery, setBooks,
             <BookList books={books} setBooks={setBooks} query={query} sldBook={sldBook} setSldBook={setSldBook}
             selectedId={selectedId} setSelectedId={setSelectedId}/>
            </SearchResult>
-
-              
+   
         </div>
     );
 };
@@ -81,6 +78,18 @@ function BookList({query, books, setBooks, sldBook, setSldBook, selectedId, setS
                 
                 console.log(data.docs.slice(0,10));
 
+                const temporaryData = data.docs.slice(0,10).map((tempData,index)=>(
+                    {
+                        id:index,
+                        title: tempData.title,
+                        author_name: tempData.author_name,
+                        key: tempData.key,
+                        wnat_to_read_count: tempData.want_to_read,
+                        subject_facet: tempData.subject_facet,
+                    
+
+                    }
+                ))
                 
                 const tempBooks = data.docs.slice(0, 10).map((tempbook,index)=>(
                     {
@@ -207,8 +216,51 @@ function ErrorMessage() {
             <h6>Something Went Wrong<br>
             </br>
             Book Not Found...
-            </h6>
+              </h6>
 
         </div>
     )
 };
+
+
+
+
+// Trial Components
+
+function MainDisplay() {
+
+    return(
+        <div>
+            <p className="main-display">
+                /Display Message goes here/
+            </p>
+        </div>
+    )
+}
+
+// Points
+// Missing dependency on 'currentUser' - either add it or remove it from dependency
+// isSel, setIsSel - declared but never used
+// Initial title loading, files to be played from the media files
+// Engagement style not settled yet, so the 
+
+
+
+// const tempBooks = data.docs.slice(0, 10).map((tempbook,index)=>(
+//     {
+//         id:index,
+//         title:tempbook.title,
+//         author_name:tempbook.author_name,
+//         cover_i:tempbook.cover_i,
+//         key:tempbook.key,
+//         first_published:tempbook.first_published_year,
+//         ratings_average: tempbook.ratings_average,
+//         subject_facet: tempbook.subject_facet,
+//         want_to_read_count: tempbook.want_to_read, 
+
+//     }
+// ))
+
+
+// Response time - reliable
+// Display error message - when books are not found (Display result)

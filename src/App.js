@@ -46,16 +46,16 @@ export default function App() {
         <BrowserRouter>
             <header>
                 <nav className='nav-bar'>
-                <NavLink to='/bookish'>
+                <NavLink to='/'>
                     <span className='navI'><IoLibraryOutline /></span>
                     <span className='navT'>Search</span>
                     
                 </NavLink>
-                <NavLink to='/read'>
+                <NavLink to='read'>
                     <span className='navI'><SiBookstack /></span>
                     <span className='navT'>Reading List</span>
                 </NavLink>
-                <NavLink to='/profile'>
+                <NavLink to='profile'>
                     <span className='navI'><FaUserCircle /></span>
                     <span className='navT'>Profile</span>
                 </NavLink>
