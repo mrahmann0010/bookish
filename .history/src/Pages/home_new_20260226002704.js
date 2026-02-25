@@ -1,6 +1,6 @@
-import React from "react";
-import SearchBar from "../components/SearchBar";
-import BookList from "../components/BookList";
+import React from 'react';
+import SearchBar from '../components/SearchBar';
+import BookList from '../components/BookList';
 
 export default function Home({ query, books, setQuery, setBooks }) {
   return (
