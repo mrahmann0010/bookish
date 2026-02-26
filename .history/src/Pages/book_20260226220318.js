@@ -11,64 +11,27 @@ export default function IndBook({ books, readLater, setReadLater }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    if (!books || !books.length) return;
+    const selected = books.find((b) => b.id.toString() === id);
+    if (!selected) return;
+    setIsLoading(true);
     async function fetchDetails() {
-      setIsLoading(true);
       try {
-        let selected = null;
-        if (books && books.length) {
-          selected = books.find((b) => b.id.toString() === id);
-        }
-        let key = selected ? selected.key : null;
-        let author_name = selected ? selected.author_name : [];
-        let cover_i = selected ? selected.cover_i : null;
-        let ratings_average = selected ? selected.ratings_average : null;
-        let title = selected ? selected.title : null;
-        let first_published = selected ? selected.first_published : null;
-        // If no key, try to fetch from OpenLibrary search API
-        if (!key) {
-          // fallback: fetch by id from OpenLibrary
-          const searchRes = await fetch(
-            `https://openlibrary.org/search.json?q=${id}`,
-          );
-          const searchData = await searchRes.json();
-          const found = searchData.docs.find(
-            (b) => b.id && b.id.toString() === id,
-          );
-          if (found) {
-            key = found.key;
-            author_name = found.author_name;
-            cover_i = found.cover_i;
-            ratings_average = found.ratings_average;
-            title = found.title;
-            first_published = found.first_published_year;
-          }
-        }
-        if (!key) {
-          setBookData(null);
-          setIsLoading(false);
-          return;
-        }
-        const res = await fetch(`https://openlibrary.org${key}.json`);
+        const res = await fetch(`https://openlibrary.org${selected.key}.json`);
         const data = await res.json();
         const description =
           typeof data.description === "object"
             ? data.description.value
             : data.description;
         setBookData({
-          key,
-          author_name,
-          cover_i,
-          ratings_average,
-          title,
-          first_published,
+          ...selected,
           description: description || "No description available",
-          coverImg: cover_i
-            ? `https://covers.openlibrary.org/b/id/${cover_i}-L.jpg`
+          coverImg: selected.cover_i
+            ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-L.jpg`
             : "/placeholder.png",
         });
       } catch (err) {
         console.error(err);
-        setBookData(null);
       } finally {
         setIsLoading(false);
       }
@@ -123,11 +86,7 @@ export default function IndBook({ books, readLater, setReadLater }) {
             {bookData.description}
           </p>
           <div className="mt-6 flex gap-4 flex-wrap">
-            <Button
-              onClick={handleAdd}
-              disabled={alreadyAdded}
-              className="bg-[#6a82fb] text-white font-bold px-6 py-2 rounded-xl shadow-md hover:bg-[#5a6ee3]"
-            >
+            <Button onClick={handleAdd} disabled={alreadyAdded} className="bg-[#6a82fb] text-white font-bold px-6 py-2 rounded-xl shadow-md hover:bg-[#5a6ee3]">
               {alreadyAdded ? "Added" : "Add to Reading List"}
             </Button>
             <Button className="bg-[#22c55e] text-white font-bold px-6 py-2 rounded-xl shadow-md hover:bg-[#16a34a]">

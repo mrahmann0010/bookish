@@ -90,8 +90,21 @@ export default function IndBook({ books, readLater, setReadLater }) {
     }
   };
 
-  if (isLoading || !bookData) {
+  if (isLoading) {
     return <p className="p-8 text-center">Loading...</p>;
+  }
+
+  if (!bookData) {
+    return (
+      <div className="max-w-container mx-auto px-6 py-12">
+        <div className="bg-white bg-opacity-90 rounded-3xl shadow-xl p-8 text-center">
+          <h2 className="text-2xl font-bold text-[#232946] mb-4">Book Not Found</h2>
+          <p className="text-lg text-[#6b7280]">
+            Sorry, we couldn't load this book's details. Please try searching again or check your internet connection.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   const alreadyAdded = readLater.some((item) => item.key === bookData.key);

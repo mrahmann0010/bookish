@@ -1,6 +1,8 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+
+
+import {initializeApp} from 'firebase/app';
+import {getAuth} from 'firebase/auth';
+import {getFirestore} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -10,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "bookish2-a815d.appspot.com",
   messagingSenderId: "907259597277",
   appId: "1:907259597277:web:ade2a6e4e4232de262a634",
-  measurementId: "G-6K49M2FN01",
+  measurementId: "G-6K49M2FN01"
 };
 
 // Initialize Firebase
@@ -19,3 +21,6 @@ export default app;
 export const auth = getAuth(app);
 
 export const db = getFirestore(app);
+
+
+

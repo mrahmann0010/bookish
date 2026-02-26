@@ -15,58 +15,45 @@
 
 
 body {
-  font-family: 'Merienda', 'Radio Canada Big', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
-  color: #3a3a3a;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #232946;
 }
 
 .app {
-  background: #fff;
-  border-radius: 32px;
-  box-shadow: 0 8px 32px rgba(60, 60, 90, 0.08);
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(106,130,251,0.15);
   margin: 32px auto;
-  max-width: 1100px;
-  padding: 32px;
+  max-width: 1200px;
+  padding: 24px;
 }
 
 .nav-bar {
   display: flex;
-  background: #e0e7ef;
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
   position: fixed;
   bottom: 0;
   justify-content: center;
   width: 100vw;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  box-shadow: 0 -4px 16px rgba(60, 60, 90, 0.06);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -4px 16px rgba(106,130,251,0.12);
 }
 
 .nav-bar a {
-  padding: 28px 14px;
+  padding: 32px 16px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #6b7280;
+  color: #fff;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .nav-bar a:hover {
-  color: #3a3a3a;
-}
-
-.card {
-  background: #f1f5f9;
-  border-radius: 24px;
-  box-shadow: 0 2px 8px rgba(60, 60, 90, 0.04);
-  padding: 24px;
-  margin-bottom: 24px;
-  transition: box-shadow 0.2s;
-}
-
-.card:hover {
-  box-shadow: 0 8px 24px rgba(60, 60, 90, 0.12);
+  color: #232946;
 }
 
 @media (max-width: 768px) {

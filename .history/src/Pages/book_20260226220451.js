@@ -27,13 +27,9 @@ export default function IndBook({ books, readLater, setReadLater }) {
         // If no key, try to fetch from OpenLibrary search API
         if (!key) {
           // fallback: fetch by id from OpenLibrary
-          const searchRes = await fetch(
-            `https://openlibrary.org/search.json?q=${id}`,
-          );
+          const searchRes = await fetch(`https://openlibrary.org/search.json?q=${id}`);
           const searchData = await searchRes.json();
-          const found = searchData.docs.find(
-            (b) => b.id && b.id.toString() === id,
-          );
+          const found = searchData.docs.find((b) => b.id && b.id.toString() === id);
           if (found) {
             key = found.key;
             author_name = found.author_name;
@@ -50,10 +46,7 @@ export default function IndBook({ books, readLater, setReadLater }) {
         }
         const res = await fetch(`https://openlibrary.org${key}.json`);
         const data = await res.json();
-        const description =
-          typeof data.description === "object"
-            ? data.description.value
-            : data.description;
+        const description = typeof data.description === "object" ? data.description.value : data.description;
         setBookData({
           key,
           author_name,
@@ -62,9 +55,7 @@ export default function IndBook({ books, readLater, setReadLater }) {
           title,
           first_published,
           description: description || "No description available",
-          coverImg: cover_i
-            ? `https://covers.openlibrary.org/b/id/${cover_i}-L.jpg`
-            : "/placeholder.png",
+          coverImg: cover_i ? `https://covers.openlibrary.org/b/id/${cover_i}-L.jpg` : "/placeholder.png",
         });
       } catch (err) {
         console.error(err);

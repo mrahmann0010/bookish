@@ -53,33 +53,14 @@ export default function BookList({ query, books, setBooks }) {
       <div className="flex flex-col items-center justify-center min-h-[200px]">
         <div className="mb-4">
           <span className="inline-block">
-            <svg
-              className="animate-spin h-12 w-12 text-primary"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-                fill="none"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-              />
+            <svg className="animate-spin h-12 w-12 text-primary" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
             </svg>
           </span>
         </div>
-        <div className="text-primary text-xl font-semibold mb-2">
-          Searching for your next read...
-        </div>
-        <div className="text-textSecondary text-md">
-          Please wait while we fetch the best books for you.
-        </div>
+        <div className="text-primary text-xl font-semibold mb-2">Searching for your next read...</div>
+        <div className="text-textSecondary text-md">Please wait while we fetch the best books for you.</div>
       </div>
     );
   }
