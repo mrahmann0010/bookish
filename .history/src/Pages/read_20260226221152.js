@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { MdDeleteForever } from "react-icons/md";
-import bookIcon from "../Pages/book-icon.png";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { MdDeleteForever } from 'react-icons/md';
+import bookIcon from '../Pages/book-icon.png';
 
 export default function Read({ readLater, setReadLater }) {
-  const [viewMode, setViewMode] = useState("grid"); // grid or list
+  const [viewMode, setViewMode] = useState('grid'); // grid or list
   const [bookDetails, setBookDetails] = useState([]);
 
   useEffect(() => {
@@ -32,17 +32,17 @@ export default function Read({ readLater, setReadLater }) {
         <h2 className="text-section font-bold">Reading List</h2>
         <div className="space-x-2">
           <button
-            onClick={() => setViewMode("grid")}
+            onClick={() => setViewMode('grid')}
             className={`px-2 py-1 rounded ${
-              viewMode === "grid" ? "bg-primary text-white" : "bg-border"
+              viewMode === 'grid' ? 'bg-primary text-white' : 'bg-border'
             }`}
           >
             Grid
           </button>
           <button
-            onClick={() => setViewMode("list")}
+            onClick={() => setViewMode('list')}
             className={`px-2 py-1 rounded ${
-              viewMode === "list" ? "bg-primary text-white" : "bg-border"
+              viewMode === 'list' ? 'bg-primary text-white' : 'bg-border'
             }`}
           >
             List
@@ -51,9 +51,7 @@ export default function Read({ readLater, setReadLater }) {
       </div>
       <div
         className={`${
-          viewMode === "grid"
-            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            : ""
+          viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6' : ''
         }`}
       >
         {bookDetails.map((book, i) => (
