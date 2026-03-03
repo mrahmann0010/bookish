@@ -24,7 +24,8 @@ export const Button = ({
       "hover:bg-amber/10 focus:ring-amber",
     ghost:
       "bg-transparent border-none text-muted hover:text-ink focus:ring-amber",
-    danger: "bg-rust text-white hover:bg-[#7a2e1e] focus:ring-rust shadow-low",
+    danger:
+      "bg-rust text-white hover:bg-[#7a2e1e] focus:ring-rust shadow-low",
   };
 
   return (

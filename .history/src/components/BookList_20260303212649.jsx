@@ -14,62 +14,16 @@ const EmptyBookSVG = () => (
     className="mx-auto mb-5"
   >
     <rect x="8" y="16" width="28" height="48" rx="3" fill="#D9CEBB" />
-    <rect
-      x="12"
-      y="20"
-      width="20"
-      height="2"
-      rx="1"
-      fill="#8C7B6B"
-      opacity="0.5"
-    />
-    <rect
-      x="12"
-      y="25"
-      width="16"
-      height="2"
-      rx="1"
-      fill="#8C7B6B"
-      opacity="0.4"
-    />
+    <rect x="12" y="20" width="20" height="2" rx="1" fill="#8C7B6B" opacity="0.5" />
+    <rect x="12" y="25" width="16" height="2" rx="1" fill="#8C7B6B" opacity="0.4" />
     <rect x="44" y="16" width="28" height="48" rx="3" fill="#D9CEBB" />
-    <rect
-      x="48"
-      y="20"
-      width="20"
-      height="2"
-      rx="1"
-      fill="#8C7B6B"
-      opacity="0.5"
-    />
-    <rect
-      x="48"
-      y="25"
-      width="16"
-      height="2"
-      rx="1"
-      fill="#8C7B6B"
-      opacity="0.4"
-    />
-    <rect
-      x="36"
-      y="14"
-      width="8"
-      height="52"
-      rx="2"
-      fill="#C9813A"
-      opacity="0.35"
-    />
+    <rect x="48" y="20" width="20" height="2" rx="1" fill="#8C7B6B" opacity="0.5" />
+    <rect x="48" y="25" width="16" height="2" rx="1" fill="#8C7B6B" opacity="0.4" />
+    <rect x="36" y="14" width="8" height="52" rx="2" fill="#C9813A" opacity="0.35" />
   </svg>
 );
 
-export default function BookList({
-  query,
-  books,
-  setBooks,
-  readLater,
-  setReadLater,
-}) {
+export default function BookList({ query, books, setBooks, readLater, setReadLater }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -117,7 +71,7 @@ export default function BookList({
   const handleQuickAdd = (book) => {
     if (!setReadLater) return;
     setReadLater((prev) =>
-      prev.find((b) => b.key === book.key) ? prev : [...prev, book],
+      prev.find((b) => b.key === book.key) ? prev : [...prev, book]
     );
   };
 

@@ -28,10 +28,7 @@ export function Footer() {
           href="https://openlibrary.org"
           target="_blank"
           rel="noreferrer"
-          style={{
-            color: "rgba(245,240,232,0.45)",
-            textDecoration: "underline",
-          }}
+          style={{ color: "rgba(245,240,232,0.45)", textDecoration: "underline" }}
         >
           OpenLibrary
         </a>

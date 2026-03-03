@@ -6,11 +6,11 @@ import BookCard from "../components/BookCard";
 // Decorative background spine rectangles (CSS-only, low opacity)
 const SpineDecorations = () => {
   const spines = [
-    { h: 120, w: 14, top: "12%", left: "5%", rot: -12, color: "#C9813A" },
-    { h: 90, w: 11, top: "60%", left: "3%", rot: 8, color: "#9B3D2B" },
-    { h: 140, w: 16, top: "25%", left: "92%", rot: 14, color: "#4A6741" },
-    { h: 80, w: 10, top: "70%", left: "88%", rot: -6, color: "#C9813A" },
-    { h: 100, w: 13, top: "82%", left: "10%", rot: 10, color: "#4A6741" },
+    { h: 120, w: 14, top: "12%", left: "5%",  rot: -12, color: "#C9813A" },
+    { h: 90,  w: 11, top: "60%", left: "3%",  rot:  8,  color: "#9B3D2B" },
+    { h: 140, w: 16, top: "25%", left: "92%", rot:  14, color: "#4A6741" },
+    { h: 80,  w: 10, top: "70%", left: "88%", rot: -6,  color: "#C9813A" },
+    { h: 100, w: 13, top: "82%", left: "10%", rot:  10, color: "#4A6741" },
     { h: 110, w: 12, top: "15%", left: "80%", rot: -16, color: "#9B3D2B" },
   ];
   return (
@@ -35,14 +35,7 @@ const SpineDecorations = () => {
   );
 };
 
-export default function Home({
-  query,
-  books,
-  setQuery,
-  setBooks,
-  readLater,
-  setReadLater,
-}) {
+export default function Home({ query, books, setQuery, setBooks, readLater, setReadLater }) {
   const [visible, setVisible] = useState(false);
   const resultsRef = useRef(null);
 
@@ -106,9 +99,7 @@ export default function Home({
               letterSpacing: "-0.01em",
             }}
           >
-            Find your next
-            <br />
-            great read.
+            Find your next<br />great read.
           </h1>
           <p
             className="mb-10 text-base"
@@ -188,7 +179,10 @@ export default function Home({
 
       {/* ── READING LIST PREVIEW ── */}
       {readLater && readLater.length > 0 && (
-        <section className="py-16" style={{ background: "#EDE6D6" }}>
+        <section
+          className="py-16"
+          style={{ background: "#EDE6D6" }}
+        >
           <div className="max-w-container mx-auto px-6">
             <div className="mb-8 flex items-end justify-between">
               <h2 className="section-heading text-2xl">Continue Reading</h2>
@@ -233,8 +227,7 @@ export default function Home({
               lineHeight: 1.6,
             }}
           >
-            &ldquo;A reader lives a thousand lives before he dies. The man who
-            never reads lives only one.&rdquo;
+            &ldquo;A reader lives a thousand lives before he dies. The man who never reads lives only one.&rdquo;
           </blockquote>
           <p
             className="mt-4 text-xs tracking-widest uppercase"

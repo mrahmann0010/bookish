@@ -14,7 +14,9 @@ export default function BookCard({ book, index = 0, isInList = false, onAdd }) {
   const spineColor = SPINE_COLORS[index % SPINE_COLORS.length];
 
   const imgEnd = "https://covers.openlibrary.org/b/id/";
-  const coverUrl = book.cover_i ? `${imgEnd}${book.cover_i}-L.jpg` : null;
+  const coverUrl = book.cover_i
+    ? `${imgEnd}${book.cover_i}-L.jpg`
+    : null;
 
   // Fallback — colored spine pattern with title initials
   const initials = book.title
@@ -119,7 +121,10 @@ export default function BookCard({ book, index = 0, isInList = false, onAdd }) {
         </div>
 
         {/* Bottom info panel */}
-        <div className="p-3 rounded-b-[6px]" style={{ background: "#EDE6D6" }}>
+        <div
+          className="p-3 rounded-b-[6px]"
+          style={{ background: "#EDE6D6" }}
+        >
           <h4
             className="line-clamp-2 leading-snug mb-1.5"
             style={{
@@ -150,9 +155,7 @@ export default function BookCard({ book, index = 0, isInList = false, onAdd }) {
               color: "#8C7B6B",
             }}
           >
-            <span>
-              {book.first_published ? `${book.first_published}` : "—"}
-            </span>
+            <span>{book.first_published ? `${book.first_published}` : "—"}</span>
             {book.ratings_average ? (
               <span className="flex items-center gap-1">
                 <FaStar size={9} style={{ color: "#C9813A" }} />

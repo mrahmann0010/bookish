@@ -62,11 +62,7 @@ export default function Navbar() {
 
         {/* Right icons */}
         <div className="hidden md:flex items-center space-x-5 text-paper/70">
-          <NavLink
-            to="/"
-            title="Search"
-            className="hover:text-amber transition-colors"
-          >
+          <NavLink to="/" title="Search" className="hover:text-amber transition-colors">
             <FiSearch size={18} />
           </NavLink>
           <NavLink

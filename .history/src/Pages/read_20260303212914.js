@@ -23,9 +23,9 @@ const BookWatermark = () => (
 const FILTER_TABS = ["All", "Want to Read", "Reading", "Finished"];
 
 export default function Read({ readLater, setReadLater }) {
-  const [filter, setFilter] = useState("All");
-  const [selected, setSelected] = useState(new Set());
-  const [viewMode, setViewMode] = useState("grid");
+  const [filter, setFilter]       = useState("All");
+  const [selected, setSelected]   = useState(new Set());
+  const [viewMode, setViewMode]    = useState("grid");
 
   const toggleSelect = (key) =>
     setSelected((prev) => {
@@ -34,7 +34,8 @@ export default function Read({ readLater, setReadLater }) {
       return next;
     });
 
-  const selectAll = () => setSelected(new Set(readLater.map((b) => b.key)));
+  const selectAll = () =>
+    setSelected(new Set(readLater.map((b) => b.key)));
 
   const clearSelection = () => setSelected(new Set());
 
@@ -50,9 +51,7 @@ export default function Read({ readLater, setReadLater }) {
   const displayed = readLater;
 
   return (
-    <div
-      style={{ background: "#F5F0E8", minHeight: "100vh", paddingTop: "64px" }}
-    >
+    <div style={{ background: "#F5F0E8", minHeight: "100vh", paddingTop: "64px" }}>
       {/* ── Ink banner header ── */}
       <div
         className="relative overflow-hidden"
@@ -86,8 +85,7 @@ export default function Read({ readLater, setReadLater }) {
               color: "rgba(245,240,232,0.4)",
             }}
           >
-            {readLater.length} {readLater.length === 1 ? "title" : "titles"}{" "}
-            saved
+            {readLater.length} {readLater.length === 1 ? "title" : "titles"} saved
           </p>
         </div>
       </div>
@@ -155,14 +153,8 @@ export default function Read({ readLater, setReadLater }) {
               fill="none"
               aria-hidden="true"
             >
-              <path
-                d="M2 5h26a4 4 0 0 1 4 4v42a3 3 0 0 0-3-3H2z"
-                fill="#D9CEBB"
-              />
-              <path
-                d="M78 5H52a4 4 0 0 0-4 4v42a3 3 0 0 1 3-3h27z"
-                fill="#D9CEBB"
-              />
+              <path d="M2 5h26a4 4 0 0 1 4 4v42a3 3 0 0 0-3-3H2z" fill="#D9CEBB" />
+              <path d="M78 5H52a4 4 0 0 0-4 4v42a3 3 0 0 1 3-3h27z" fill="#D9CEBB" />
               <rect x="38" y="3" width="4" height="52" rx="2" fill="#C9813A" />
             </svg>
             <h2
@@ -253,14 +245,16 @@ export default function Read({ readLater, setReadLater }) {
                 <button
                   onClick={() => toggleSelect(book.key)}
                   className="absolute top-2 left-3 z-20 text-base transition-colors"
-                  style={{
-                    color: selected.has(book.key) ? "#C9813A" : "#D9CEBB",
-                  }}
+                  style={{ color: selected.has(book.key) ? "#C9813A" : "#D9CEBB" }}
                   aria-label="Select book"
                 >
                   {selected.has(book.key) ? <FiCheckSquare /> : <FiSquare />}
                 </button>
-                <BookCard book={{ ...book, id: i }} index={i} isInList={true} />
+                <BookCard
+                  book={{ ...book, id: i }}
+                  index={i}
+                  isInList={true}
+                />
               </div>
             ))}
           </div>
@@ -281,9 +275,7 @@ export default function Read({ readLater, setReadLater }) {
                 {/* Checkbox */}
                 <button
                   onClick={() => toggleSelect(book.key)}
-                  style={{
-                    color: selected.has(book.key) ? "#C9813A" : "#D9CEBB",
-                  }}
+                  style={{ color: selected.has(book.key) ? "#C9813A" : "#D9CEBB" }}
                   className="flex-shrink-0 text-lg transition-colors"
                 >
                   {selected.has(book.key) ? <FiCheckSquare /> : <FiSquare />}
@@ -357,6 +349,74 @@ export default function Read({ readLater, setReadLater }) {
             ))}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+  if (bookDetails.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background">
+        <p className="text-textSecondary mb-4">Your reading list is empty.</p>
+        <Link to="/" className="text-primary font-medium">
+          Browse books
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-container mx-auto px-6 py-12">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-section font-bold">Reading List</h2>
+        <div className="space-x-2">
+          <button
+            onClick={() => setViewMode("grid")}
+            className={`px-2 py-1 rounded ${
+              viewMode === "grid" ? "bg-primary text-white" : "bg-border"
+            }`}
+          >
+            Grid
+          </button>
+          <button
+            onClick={() => setViewMode("list")}
+            className={`px-2 py-1 rounded ${
+              viewMode === "list" ? "bg-primary text-white" : "bg-border"
+            }`}
+          >
+            List
+          </button>
+        </div>
+      </div>
+      <div
+        className={`${
+          viewMode === "grid"
+            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            : ""
+        }`}
+      >
+        {bookDetails.map((book, i) => (
+          <div
+            key={i}
+            className="relative bg-surface rounded-lg shadow-low p-4 flex items-center gap-4"
+          >
+            <img
+              src={book.coverImg || bookIcon}
+              alt={book.title}
+              className="w-16 h-24 object-cover rounded"
+            />
+            <div className="flex-1">
+              <h3 className="text-body font-medium truncate">{book.title}</h3>
+            </div>
+            <button
+              onClick={() => handleDelete(book.key)}
+              className="text-red-500 hover:text-red-700"
+              aria-label="Remove from list"
+            >
+              <MdDeleteForever size={24} />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -44,7 +44,9 @@ export default function SearchBar({ query, setQuery }) {
       className="w-full max-w-2xl mx-auto flex items-stretch"
       style={{
         background: "#EDE6D6",
-        border: `1.5px solid ${focused ? "#C9813A" : "#D9CEBB"}`,
+        border: `1.5px solid ${
+          focused ? "#C9813A" : "#D9CEBB"
+        }`,
         borderRadius: "9999px",
         boxShadow: focused
           ? "0 0 0 3px rgba(201,129,58,0.18)"

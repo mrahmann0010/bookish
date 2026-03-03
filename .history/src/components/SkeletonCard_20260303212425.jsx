@@ -24,7 +24,10 @@ export default function SkeletonCard() {
       </div>
 
       {/* Bottom panel */}
-      <div className="p-3" style={{ background: "#EDE6D6" }}>
+      <div
+        className="p-3"
+        style={{ background: "#EDE6D6" }}
+      >
         <div
           className="skeleton-shimmer h-4 rounded mb-2"
           style={{ width: "80%" }}
